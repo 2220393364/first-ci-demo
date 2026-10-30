@@ -20,8 +20,13 @@ jobs:
 
       - name: 安装依赖
         run: |
-          pip install pytest
+          pip install pytest pytest-cov
 
-      - name: 运行测试
+      - name: 运行测试并统计覆盖率
         run: |
-          pytest test_calculator.py -v
+          pytest test_calculator.py -v --cov=calculator --cov-report=term-missing
+
+      - name: 覆盖率门禁
+        run: |
+          coverage report --fail-under=80
+          
