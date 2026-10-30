@@ -1,7 +1,7 @@
 from calculator import add, subtract, multiply, divide
 
 def test_add():
-    assert add(1, 2) == 3
+    assert add(1, 2) == 999
 
 def test_subtract():
     assert subtract(5, 3) == 2
